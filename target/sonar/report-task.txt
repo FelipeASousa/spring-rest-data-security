@@ -2,5 +2,5 @@ projectKey=Teste-projeto-java
 serverUrl=http://localhost:9000
 serverVersion=10.4.1.88267
 dashboardUrl=http://localhost:9000/dashboard?id=Teste-projeto-java
-ceTaskId=48c405b2-6cd6-4b38-9e44-2dae53b69f64
-ceTaskUrl=http://localhost:9000/api/ce/task?id=48c405b2-6cd6-4b38-9e44-2dae53b69f64
+ceTaskId=9205b28a-8670-41a8-b5b5-aa399c6948b9
+ceTaskUrl=http://localhost:9000/api/ce/task?id=9205b28a-8670-41a8-b5b5-aa399c6948b9
