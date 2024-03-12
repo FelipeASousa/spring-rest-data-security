@@ -49,7 +49,7 @@ public class GroupService {
         groupRepository.deleteById(id);
     }
     public GroupDTO findById(Long id) {
-        Group grep = groupRepository.findById(id).get();
+        Group grep = groupRepository.findById(id).orElse(null);
         return groupConverter.convertToDto(grep);
     }
 
