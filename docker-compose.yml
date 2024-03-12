@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+
+  maria-db:
+    container_name: maria-db
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: sample
+      MARIADB_ROOT_HOST: '%'
+    ports:
+      - 3306:3306
+    volumes:
+      -  mariadb_volume:/var/lib/mysql
+    networks:
+      - api-network
+
+volumes:
+  mariadb_volume:
+
+networks:
+  api-network:
+    driver: bridge
