@@ -3,7 +3,6 @@ package br.edu.fatecsjc.lgnspringapi.service;
 import br.edu.fatecsjc.lgnspringapi.converter.GroupConverter;
 import br.edu.fatecsjc.lgnspringapi.dto.GroupDTO;
 import br.edu.fatecsjc.lgnspringapi.entity.Group;
-import br.edu.fatecsjc.lgnspringapi.entity.Member;
 import br.edu.fatecsjc.lgnspringapi.repository.GroupRepository;
 import br.edu.fatecsjc.lgnspringapi.repository.MemberRepository;
 import jakarta.transaction.Transactional;
@@ -36,9 +35,9 @@ public class GroupService {
         entity.getMembers().clear();
 
         Group groupToSaved = groupConverter.convertToEntity(dto, entity);
-        groupToSaved.getMembers().forEach( member -> {
-            member.setGroup(groupToSaved);
-        });
+        groupToSaved.getMembers().forEach( member -> 
+            member.setGroup(groupToSaved)
+        );
         Group groupReturned = groupRepository.save(groupToSaved);
         return groupConverter.convertToDto(groupReturned);
     }
