@@ -24,10 +24,7 @@ public class GroupService {
         return groupConverter.convertToDto(groupRepository.findAll());
     }
 
-    public GroupDTO findById(Long id) {
-        return groupConverter.convertToDto(groupRepository.findById(id).get());
-    }
-
+    
     @Transactional
     public GroupDTO save(Long id, GroupDTO dto) {
         Group entity = groupRepository.findById(id).get();
@@ -51,4 +48,8 @@ public class GroupService {
     public void delete(Long id) {
         groupRepository.deleteById(id);
     }
+    public GroupDTO findById(Long id) {
+        return groupConverter.convertToDto(groupRepository.findById(id).get());
+    }
+
 }
